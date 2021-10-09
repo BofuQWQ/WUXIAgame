@@ -57,7 +57,7 @@ public class character : MonoBehaviour
           //  if (mousepos.x > 0 && objectpos.x>0 && mousepos.y > 0 && objectpos.y > 0) { }
                 Vector2 direction = mousepos - objectpos;
 
-                //direction.z = 0f;
+              
                 direction = direction.normalized;
                 //ÞD
                 bulletX.transform.up = direction;
@@ -67,7 +67,7 @@ public class character : MonoBehaviour
                 bulletX.GetComponent<Rigidbody2D>().velocity = direction * shootspeed;
             //  bulletX.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectspeed);
 
-            Debug.Log(direction);
+            //Debug.Log(direction);
 
         }
 
