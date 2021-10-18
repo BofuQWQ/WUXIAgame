@@ -51,17 +51,24 @@ public class character : MonoBehaviour
 
             //Êó˜ËÎ»ÖÃ
             Vector2 mousepos = Input.mousePosition;
-            Vector2 objectpos = transform.position;
-            Vector2 direction = mousepos - objectpos;
-            //direction.z = 0f;
-            direction = direction.normalized;
-            //ÞD
-            bulletX.transform.up = direction;
+            Vector2 objectpos = Camera.main.WorldToScreenPoint(transform.position);
+            
+            // + +  + +
+          //  if (mousepos.x > 0 && objectpos.x>0 && mousepos.y > 0 && objectpos.y > 0) { }
+                Vector2 direction = mousepos - objectpos;
 
-            // ÒÆ„Ó
+                //direction.z = 0f;
+                direction = direction.normalized;
+                //ÞD
+                bulletX.transform.up = direction;
 
-            bulletX.GetComponent<Rigidbody2D>().velocity = direction*shootspeed;
+                // ÒÆ„Ó
+
+                bulletX.GetComponent<Rigidbody2D>().velocity = direction * shootspeed;
             //  bulletX.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectspeed);
+
+            Debug.Log(direction);
+
         }
 
 
